@@ -45,4 +45,6 @@ app.*.map.json
 
 
 # ignore file
-/INSTRUCOES.md
+Z_CODIGO_BKP.md
+Z_INSTRUCOES.md
+Z_SHORTCUTs.md

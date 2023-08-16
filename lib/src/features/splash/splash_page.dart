@@ -1,4 +1,4 @@
-import 'package:asyncstate/asyncstate.dart';
+// import 'package:asyncstate/asyncstate.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {
@@ -7,23 +7,18 @@ class SplashPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SplashPage'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text('SplashPage'),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () async {
-                await Future.delayed(const Duration(seconds: 2)).asyncLoader();
-              },
-              child: const Text('Teste Loaders'),
-            ),
-          ],
+      backgroundColor: Colors.black,
+      body: DecoratedBox(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/background_image_chair.jpg'),
+            fit: BoxFit.cover,
+            opacity: 0.2,
+          ),
         ),
+        child: Center(
+          child: Image.asset('assets/images/imgLogo.png'),
+        ), // tive que adicionar para a imagem aparecer
       ),
     );
   }
