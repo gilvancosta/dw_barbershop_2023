@@ -7,7 +7,7 @@ class Failure<E extends Exception, S> extends Either<E, S> {
 }
 
 class Success<E extends Exception, S> extends Either<E, S> {
-  final S success;
+  final S value;
 
-  Success(this.success);
+  Success(this.value);
 }
