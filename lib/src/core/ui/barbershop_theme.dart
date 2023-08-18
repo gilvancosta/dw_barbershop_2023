@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:dw_barbershop_2023/src/core/ui/constants.dart';
+import 'package:dw_barbershop_2023/src/core/constants/constants.dart';
 
 sealed class BarbershopTheme {
   static const defaultInputBorder = OutlineInputBorder(
