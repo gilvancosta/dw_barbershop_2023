@@ -1,5 +1,6 @@
 import 'package:dw_barbershop_2023/src/core/features/splash/auth/login/login_page.dart';
 import 'package:dw_barbershop_2023/src/core/features/splash/splash/splash_page.dart';
+import 'package:dw_barbershop_2023/src/core/ui/barbershop_nav_global_key.dart';
 import 'package:dw_barbershop_2023/src/core/ui/barbershop_theme.dart';
 import 'package:dw_barbershop_2023/src/core/ui/widgets/barbershop_loader.dart';
 
@@ -20,6 +21,7 @@ class BarbershopApp extends StatelessWidget {
           title: 'DW Barbershop',
           theme: BarbershopTheme.themeData,
           navigatorObservers: [asyncNavigatorObserver],
+          navigatorKey: BarbershopNavGlobalKey.instance.navkey,
           routes: {
             '/': (_) => const SplashPage(),
             '/auth/login': (_) => const LoginPage(),
