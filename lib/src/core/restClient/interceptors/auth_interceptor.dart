@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthInterceptor extends Interceptor {
   @override
-  Future onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
+  Future<void> onRequest(RequestOptions options, RequestInterceptorHandler handler) async {
     final RequestOptions(:headers, :extra) = options;
 
     const authHeaderKey = 'Authorization';
@@ -12,9 +12,8 @@ class AuthInterceptor extends Interceptor {
 
     if (extra case {'DIO_AUTH_KEY': true}) {
       final sp = await SharedPreferences.getInstance();
-      headers.addAll({authHeaderKey: 'bearer ${sp.getString(LocalStorageKeys.accessToken)}'});
+      headers.addAll({authHeaderKey: 'Bearer ${sp.getString(LocalStorageKeys.accessToken)}'});
     }
-
-    handler.next(options);
+    return handler.next(options);
   }
 }

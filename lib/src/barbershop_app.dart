@@ -1,10 +1,12 @@
+import 'package:dw_barbershop_2023/src/core/features/splash/auth/login/login_page.dart';
+import 'package:dw_barbershop_2023/src/core/features/splash/splash/splash_page.dart';
 import 'package:dw_barbershop_2023/src/core/ui/barbershop_theme.dart';
 import 'package:dw_barbershop_2023/src/core/ui/widgets/barbershop_loader.dart';
-import 'package:dw_barbershop_2023/src/features/splash/auth/login/login_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:asyncstate/widget/async_state_builder.dart';
 
-import 'package:dw_barbershop_2023/src/features/splash/splash_page.dart';
+
 
 class BarbershopApp extends StatelessWidget {
   const BarbershopApp({super.key});
@@ -20,13 +22,9 @@ class BarbershopApp extends StatelessWidget {
           navigatorObservers: [asyncNavigatorObserver],
           routes: {
             '/': (_) => const SplashPage(),
-            'auth/login': (_) => const LoginPage(),
-            //'/register': (context) => const RegisterPage(),
-            // '/barbershop': (context) => const BarbershopPage(),
-            // '/barbershop/barber': (context) => const BarberPage(),
-            // '/barbershop/barber/schedule': (context) => const SchedulePage(),
-            // '/barbershop/barber/schedule/confirm': (context) => const ConfirmPage(),
-            // '/barbershop/barber/schedule/confirmed': (context) => const ConfirmedPage(),
+            '/auth/login': (_) => const LoginPage(),
+            '/home/adm': (_) => const Text('ADM'),
+            '/home/employee': (_) => const Text('Employee'),
           },
         );
       },
