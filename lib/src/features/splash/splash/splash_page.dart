@@ -1,24 +1,34 @@
 // import 'package:asyncstate/asyncstate.dart';
+import 'dart:async';
+import 'dart:developer';
+
 import 'package:dw_barbershop_2023/src/core/constants/constants.dart';
+import 'package:dw_barbershop_2023/src/core/ui/helpers/messages.dart';
 import 'package:dw_barbershop_2023/src/features/splash/auth/login/login_page.dart';
+import 'package:dw_barbershop_2023/src/features/splash/splash/splash_vm.dart';
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class SplashPage extends StatefulWidget {
+class SplashPage extends ConsumerStatefulWidget {
   const SplashPage({super.key});
 
   @override
-  State<SplashPage> createState() => _SplashPageState();
+  ConsumerState<SplashPage> createState() => _SplashPageState();
 }
 
-class _SplashPageState extends State<SplashPage> {
+class _SplashPageState extends ConsumerState<SplashPage> {
   var _scale = 10.0;
   final _animationDuration = const Duration(milliseconds: 3000);
   var _animationOpacityLogo = 0.0;
 
   double get _logoAnimationWidth => _scale * 100;
   double get _logoAnimationHeight => _scale * 120;
+
+  var endAnimation = false;
+  Timer? redirectTimer;
+
 
   @override
   void initState() {
@@ -32,8 +42,49 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
   }
 
+  void _redirect(String routeName) {
+    if (!endAnimation) {
+      redirectTimer?.cancel();
+      redirectTimer = Timer(
+        const Duration(milliseconds: 300),
+        () => _redirect(routeName),
+      );
+    } else {
+      redirectTimer?.cancel();
+      Navigator.of(context).pushNamedAndRemoveUntil(routeName, (route) => false);
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
+
+    ref.listen(splashVmProvider, (_, state) {
+      state.whenOrNull(
+        error: (error, stackTrace) {
+          log('Erro ao validar o login', error: error, stackTrace: stackTrace);
+          Messages.showError('Erro ao validar o login', context);
+          _redirect('/auth/login');
+        },
+        data: (data) {
+          switch (data) {
+            case SplashState.loggedADM:
+              _redirect('/home/adm');
+              break;
+            case SplashState.loggedEmployee:
+              _redirect('/home/employee');
+              break;
+            case _:
+              _redirect('/auth/login');
+              break;
+          } 
+        },
+      );
+    });
+
+
+
+
     return Scaffold(
       backgroundColor: Colors.black,
       body: DecoratedBox(
@@ -46,12 +97,19 @@ class _SplashPageState extends State<SplashPage> {
         ),
         child: Center(
           child: AnimatedOpacity(
+              duration: _animationDuration,
               opacity: _animationOpacityLogo,
               curve: Curves.easeIn,
-              duration: _animationDuration,
+  
               //-----------------
               onEnd: () {
-                Navigator.of(context).pushAndRemoveUntil(
+
+                setState(() {
+                  endAnimation = true;
+                });
+
+
+ /*                Navigator.of(context).pushAndRemoveUntil(
                     PageRouteBuilder(
                       settings: const RouteSettings(name: 'auth/login'),
                       pageBuilder: (
@@ -73,7 +131,7 @@ class _SplashPageState extends State<SplashPage> {
                         );
                       },
                     ),
-                    (route) => false);
+                    (route) => false); */
               },
 
               //---------------------
