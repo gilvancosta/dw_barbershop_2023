@@ -17,7 +17,7 @@ class BarbershopRegisterVm extends _$BarbershopRegisterVm {
     if (openingDays.contains(weekDay)) {
       openingDays.remove(weekDay);
     } else {
-      openingDays.remove(weekDay);
+      openingDays.add(weekDay);
     }
 
     state = state.copyWith(openingDays: openingDays);
@@ -29,7 +29,7 @@ class BarbershopRegisterVm extends _$BarbershopRegisterVm {
     if (openingHours.contains(hour)) {
       openingHours.remove(hour);
     } else {
-      openingHours.remove(hour);
+      openingHours.add(hour);
     }
 
     state = state.copyWith(openingHours: openingHours);
@@ -47,8 +47,10 @@ class BarbershopRegisterVm extends _$BarbershopRegisterVm {
       case Success():
         ref.invalidate(getMyBarbershopProvider);
         state = state.copyWith(status: BarbershopRegisterStateStatus.success);
+           break;
       case Failure():
         state = state.copyWith(status: BarbershopRegisterStateStatus.error);
+           break;
     }
   }
 }

@@ -70,15 +70,15 @@ class _BarbershopRegisterPageState extends ConsumerState<BarbershopRegisterPage>
                   decoration: const InputDecoration(label: Text('E-mail')),
                 ),
                 const SizedBox(height: 5.0),
-                WeekdaysPanel(onDayPressed: (value) {
-                  barbershopRegisterVM.addOrRemoveOpenDay(value);
+                WeekdaysPanel(onDayPressed: (weekDay) {
+                  barbershopRegisterVM.addOrRemoveOpenDay(weekDay);
                 }),
                 const SizedBox(height: 24.0),
                 HoursPanel(
                   startTime: 6,
                   endTime: 23,
-                  onHourPressed: (int value) {
-                    barbershopRegisterVM.addOrRemoveOpenHour(value);
+                  onHourPressed: (hour) {
+                    barbershopRegisterVM.addOrRemoveOpenHour(hour);
                   },
                 ),
                 const SizedBox(height: 24.0),
