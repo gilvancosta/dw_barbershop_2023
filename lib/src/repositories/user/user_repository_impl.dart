@@ -6,12 +6,11 @@ import 'package:dw_barbershop_2023/src/core/exceptions/auth_exception.dart';
 import 'package:dw_barbershop_2023/src/core/exceptions/repository_exception.dart';
 
 import 'package:dw_barbershop_2023/src/core/fp/either.dart';
+import 'package:dw_barbershop_2023/src/core/fp/nil.dart';
 import 'package:dw_barbershop_2023/src/core/restClient/rest_client.dart';
 
 import 'package:dw_barbershop_2023/src/model/user_model.dart';
 import 'package:dw_barbershop_2023/src/repositories/user/user_repository.dart';
-
-
 
 class UserRepositoryImpl implements UserRepository {
   final RestClient restClient;
@@ -25,7 +24,7 @@ class UserRepositoryImpl implements UserRepository {
       final Response(:data) = await restClient.unAuth.post('/auth', data: {
         'email': email,
         'password': password,
-      }); 
+      });
 
       return Success(data['access_token']);
     } on DioException catch (e, s) {
@@ -52,6 +51,22 @@ class UserRepositoryImpl implements UserRepository {
     } on ArgumentError catch (e, s) {
       log('Invalid Json', error: e, stackTrace: s);
       return Failure(RepositoryException(message: e.message));
+    }
+  }
+
+  @override
+  Future<Either<RepositoryException, Nil>> registerAdmin(({String email, String name, String password}) userData) async {
+    try {
+      await restClient.auth.post('/users', data: {
+        'email': userData.email,
+        'name': userData.name,
+        'password': userData.password,
+        'profile': 'ADM',
+      });
+      return Success(Nil());
+    } on Exception catch (e, s) {
+      log('Erro ao cadastrar usuário', error: e, stackTrace: s);
+      return Failure(RepositoryException(message: 'Erro ao cadastrar usuário admin'));
     }
   }
 }
