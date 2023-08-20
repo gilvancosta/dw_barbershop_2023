@@ -4,7 +4,7 @@ import 'dart:developer';
 
 import 'package:dw_barbershop_2023/src/core/constants/constants.dart';
 import 'package:dw_barbershop_2023/src/core/ui/helpers/messages.dart';
-import 'package:dw_barbershop_2023/src/features/splash/auth/login/login_page.dart';
+
 import 'package:dw_barbershop_2023/src/features/splash/splash/splash_vm.dart';
 
 

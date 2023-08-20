@@ -2,8 +2,9 @@ import 'package:dw_barbershop_2023/src/core/ui/helpers/form_helper.dart';
 import 'package:dw_barbershop_2023/src/core/ui/helpers/messages.dart';
 import 'package:dw_barbershop_2023/src/core/ui/widgets/hours_panel.dart';
 import 'package:dw_barbershop_2023/src/core/ui/widgets/weekdays_panel.dart';
-import 'package:dw_barbershop_2023/src/features/splash/auth/register/barbershop/barbershop_register_state.dart';
-import 'package:dw_barbershop_2023/src/features/splash/auth/register/barbershop/barbershop_register_vm.dart';
+import 'package:dw_barbershop_2023/src/features/auth/register/barbershop/barbershop_register_state.dart';
+import 'package:dw_barbershop_2023/src/features/auth/register/barbershop/barbershop_register_vm.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:validatorless/validatorless.dart';

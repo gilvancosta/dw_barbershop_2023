@@ -1,6 +1,6 @@
-
 import 'package:dw_barbershop_2023/src/core/providers/application_providers.dart';
-import 'package:dw_barbershop_2023/src/features/splash/auth/register/barbershop/barbershop_register_state.dart';
+import 'package:dw_barbershop_2023/src/features/auth/register/barbershop/barbershop_register_state.dart';
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:dw_barbershop_2023/src/core/fp/either.dart';
 
