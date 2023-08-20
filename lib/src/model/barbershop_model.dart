@@ -3,7 +3,7 @@ class BarbershopModel {
   final String name;
   final String email;
   final List<String> openingDays;
-  final List<String> openingHours;
+  final List<int> openingHours;
   BarbershopModel({
     required this.id,
     required this.name,

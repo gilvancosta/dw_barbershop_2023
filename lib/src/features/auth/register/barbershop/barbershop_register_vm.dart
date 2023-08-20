@@ -39,7 +39,12 @@ class BarbershopRegisterVm extends _$BarbershopRegisterVm {
     final repository = ref.watch(barbershopRepositoryProvider);
     final BarbershopRegisterState(:openingDays, :openingHours) = state;
 
-    final dto = (name: name, email: email, openingDays: openingDays, openingHours: openingHours);
+    final dto = (
+      name: name,
+      email: email,
+      openingDays: openingDays,
+      openingHours: openingHours,
+    );
 
     final registerResult = await repository.save(dto);
 
@@ -47,10 +52,10 @@ class BarbershopRegisterVm extends _$BarbershopRegisterVm {
       case Success():
         ref.invalidate(getMyBarbershopProvider);
         state = state.copyWith(status: BarbershopRegisterStateStatus.success);
-           break;
+        break;
       case Failure():
         state = state.copyWith(status: BarbershopRegisterStateStatus.error);
-           break;
+        break;
     }
   }
 }

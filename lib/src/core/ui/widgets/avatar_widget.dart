@@ -21,7 +21,14 @@ class AvatarWidget extends StatelessWidget {
             bottom: 2,
             right: 2,
             child: Container(
-              decoration: BoxDecoration(color: Colors.white, border: Border.all(color: ColorsConstants.brow, width: 4), shape: BoxShape.circle),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                  color: ColorsConstants.brow,
+                  width: 4,
+                ),
+                shape: BoxShape.circle,
+              ),
               child: const Icon(
                 BarbershopIcons.addEmployee,
                 color: ColorsConstants.brow,
