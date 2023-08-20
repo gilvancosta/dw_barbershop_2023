@@ -17,8 +17,6 @@ abstract interface class UserRepository {
     }) userData,
   );
 
-
-
   Future<Either<RepositoryException, List<UserModel>>> getEmployees(int barbershopId);
 
   Future<Either<RepositoryException, Nil>> registerAdmAsEmployee(

@@ -2,10 +2,12 @@ import 'dart:developer';
 import 'package:dw_barbershop_2023/src/core/constants/constants.dart';
 import 'package:dw_barbershop_2023/src/core/ui/barbershop_icons.dart';
 import 'package:dw_barbershop_2023/src/core/ui/widgets/barbershop_loader.dart';
-import 'package:dw_barbershop_2023/src/features/home/adm/home_adm_state.dart';
-import 'package:dw_barbershop_2023/src/features/home/adm/widgets/home_employee_tile.dart';
-import 'package:dw_barbershop_2023/src/features/home/widgets/home_header.dart';
-import 'package:dw_barbershop_2023/src/features/home/adm/home_adm_vm.dart';
+import 'package:dw_barbershop_2023/src/features/adm/home_adm_state.dart';
+import 'package:dw_barbershop_2023/src/features/adm/home_adm_vm.dart';
+import 'package:dw_barbershop_2023/src/features/adm/widgets/home_employee_tile.dart';
+
+import 'package:dw_barbershop_2023/src/features/widgets/home_header.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

@@ -1,7 +1,7 @@
 import 'package:asyncstate/asyncstate.dart';
 import 'package:dw_barbershop_2023/src/core/fp/either.dart';
 import 'package:dw_barbershop_2023/src/core/providers/application_providers.dart';
-import 'package:dw_barbershop_2023/src/features/home/adm/home_adm_state.dart';
+import 'package:dw_barbershop_2023/src/features/adm/home_adm_state.dart';
 import 'package:dw_barbershop_2023/src/model/barbershop_model.dart';
 import 'package:dw_barbershop_2023/src/model/user_model.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
