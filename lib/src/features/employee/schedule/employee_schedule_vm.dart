@@ -8,6 +8,8 @@ part 'employee_schedule_vm.g.dart';
 
 @riverpod
 class EmployeeScheduleVm extends _$EmployeeScheduleVm {
+
+  
   Future<Either<RepositoryException, List<ScheduleModel>>> _getSchedules(int userId, DateTime date) {
     final repository = ref.read(scheduleRepositoryProvider);
 

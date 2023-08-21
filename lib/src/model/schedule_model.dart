@@ -37,3 +37,14 @@ class ScheduleModel {
     }
   }
 }
+
+/* [
+    {
+        "id": 3,
+        "barbershop_id": 2,
+        "user_id": 5,
+        "client_name": "Aurora",
+        "date": "2023-08-21T00:00:00.000Z",
+        "time": 8
+    }
+] */

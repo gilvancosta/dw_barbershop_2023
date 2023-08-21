@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:dw_barbershop_2023/src/core/constants/constants.dart';
+import 'package:dw_barbershop_2023/src/core/providers/application_providers.dart';
 import 'package:dw_barbershop_2023/src/core/ui/barbershop_icons.dart';
 import 'package:dw_barbershop_2023/src/core/ui/widgets/barbershop_loader.dart';
 import 'package:dw_barbershop_2023/src/features/adm/home_adm_state.dart';
@@ -24,6 +25,7 @@ class HomeAdmPage extends ConsumerWidget {
         backgroundColor: ColorsConstants.brow,
         onPressed: () async {
           await Navigator.of(context).pushNamed('/employee/register');
+          ref.invalidate(getMeProvider);
           ref.invalidate(homeAdmVmProvider);
         },
         child: const CircleAvatar(
