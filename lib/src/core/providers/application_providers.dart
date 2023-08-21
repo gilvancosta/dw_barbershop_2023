@@ -4,6 +4,8 @@ import 'package:dw_barbershop_2023/src/core/ui/barbershop_nav_global_key.dart';
 
 import 'package:dw_barbershop_2023/src/model/barbershop_model.dart';
 import 'package:dw_barbershop_2023/src/model/user_model.dart';
+import 'package:dw_barbershop_2023/src/repositories/schedule/schedule_repository.dart';
+import 'package:dw_barbershop_2023/src/repositories/schedule/schedule_repository_impl.dart';
 import 'package:flutter/material.dart';
 
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -62,6 +64,8 @@ Future<void> logout(LogoutRef ref) async {
   Navigator.of(BarbershopNavGlobalKey.instance.navkey.currentContext!).pushNamedAndRemoveUntil('/auth/login', (route) => false);
 }
 
+@riverpod
+ScheduleRepository scheduleRepository(ScheduleRepositoryRef ref) => ScheduleRepositoryImpl(restClient: ref.read(restClientProvider));
 
 /// Rodar o comando abaixo
 ///  dart run build_runner watch -d
