@@ -1,16 +1,65 @@
-# dw_barbershop_2023
+# Dart Week agosto/2023 BarberShop - Flutter/Riverpod
 
-A new Flutter project.
+## Descrição do Projeto
 
-## Getting Started
+Este repositório contém o código-fonte de um aplicativo DW BARBERSHOP desenvolvido durante a Dart Week 2023 11º edição pelo processsor Rodrigo Rahman. O objetivo do projeto é criar um aplicativo para Barbearia com recursos de Cadastros de Administrador, Empregados e agendamento de horários, proporcionando uma maneira conveniente para os clientes agendarem seus cortes de cabelo.
 
-This project is a starting point for a Flutter application.
+## Architecture and dependencies
+Este projeto foi construído com arquitetura MVVM (Model-View-ViewModel)
 
-A few resources to get you started if this is your first Flutter project:
+Uso do package Riverpod, que é Uma biblioteca de gerenciamento de estado
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screens
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Visão do Administrador
+
+<div align="center" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; gap: 10px;">
+    <img src="assets/images/image_app_adm1.png" width="600px" height="600px">
+    <img src="assets/images/image_app_adm2.png" width="600px" height="600px">
+
+</div>
+
+## Visão do Colaborador
+
+<div align="center" style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; align-content: center; gap: 10px;">
+    <img src="assets/images/image_app_colaborador.png" width="600px" height="600px">
+
+</div>
+
+## Como rodar a aplicação
+
+### Pré-requisitos
+
+- [Dart](https://dart.dev/get-dart)
+- [Flutter](https://flutter.dev/docs/get-started/install)
+- [Android Studio](https://developer.android.com/studio)
+- [VSCode](https://code.visualstudio.com/)
+- [Git](https://git-scm.com/)
+
+### Backend
+
+
+### Rodando a aplicação
+
+```bash
+# Clone este repositório
+$ git clone https://github.com/gilvancosta/dw_barbershop_2023.git
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd dw_barbershop_2023
+
+# Instale as dependências
+$ flutter pub get
+
+# Execute a aplicação em modo de desenvolvimento
+$ flutter run
+```
+
+### Tecnologias utilizadas:
+
+- Dart
+- Flutter
+
+## Licença
+
+Este projeto esta sobe a licença MIT. Consulte a [LICENÇA](LICENSE) para saber mais.
