@@ -37,6 +37,8 @@ Uso do package Riverpod, que é Uma biblioteca de gerenciamento de estado
 - [Git](https://git-scm.com/)
 
 ### Backend
+- [Instruções para o Backend](https://gist.github.com/rodrigorahman/22a7d055bded90c6d9bdedb594d2b8fb)
+
 
 
 ### Rodando a aplicação
@@ -59,6 +61,10 @@ $ flutter run
 
 - Dart
 - Flutter
+
+## Referências:
+- [Canal YouTube - Rodrigo Rahman ](https://www.youtube.com/@rodrigorahman)
+
 
 ## Licença
 
