@@ -68,4 +68,4 @@ $ flutter run
 
 ## Licença
 
-Este projeto esta sobe a licença MIT. Consulte a [LICENÇA](LICENSE) para saber mais.
+Este projeto esta sobe a licença MIT. Consulte a [LICENÇA](LICENSE.txt) para saber mais.
